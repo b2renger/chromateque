@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Chromateque</string>
+  <string name="sign_in_explanation">Sign in with Google Play Services</string>
+  <string name="you_are_signed_in">You are signed in with Google Play Services</string>
+  <string name="sign_out"> Sign out </string>
+  <string name="label_submit_score">Submit score</string>
+  <string name="label_show_scores">Show highscores</string>
+  <string name="submit_succeeded">Score submitted !</string>
+  <string name="signin_other_error">sign in failed</string>
+</resources>
