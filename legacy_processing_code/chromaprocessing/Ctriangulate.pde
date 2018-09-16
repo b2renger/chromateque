@@ -7,7 +7,104 @@ import processing.opengl.*;
 import java.util.*;
 import java.io.*;
 
+/////////////////////////////////////////////////////////////////////////
+// Triangulation - Splash Icon
+void newRoundTriangulation(int seed, float dimension, int backColor) {
+  noiseSeed(seed);
+  randomSeed(seed);
 
+
+  ArrayList<PVector> vertices = new ArrayList<PVector>();
+  for (int i = 0; i < mNbVertices; i++) {
+    float angle = map (i, 0, mNbVertices/2, 0, TWO_PI);
+    float xpos = dimension/2 + random(-1, 1)* cos(angle)*dimension/2;
+    float ypos = dimension/2 + random(-1, 1)*sin(angle)*dimension/2;
+
+    vertices.add(new PVector(xpos, ypos));
+  }
+
+
+  for (int i = 0; i < mNbVertices/10; i++) {
+    float angle = map (i, 0, mNbVertices/10, 0, TWO_PI);
+    float xpos = dimension/2 +  cos(angle)*dimension/2;
+    float ypos = dimension/2 + sin(angle)*dimension/2;
+
+    vertices.add(new PVector(xpos, ypos));
+  }
+
+  triangulator = new CTriangulator(vertices);
+
+  ArrayList<Triangle> triangles = triangulator.getTriangles();
+
+  pg.beginDraw();
+  pg.background(backColor);
+  for (Triangle t : triangles) {
+    noiseSeed(seed);
+    noise += 0.05;
+    pg.beginShape(TRIANGLES);
+
+    int row_index = floor((map(noise(noise, 50, 20), 0, 1, 0, colors.getRowCount())));
+    //row_index = int(random(colors.getRowCount()-1));
+    String newColor = "FF"+colors.getString(row_index, 2);
+    int c = color(unhex(newColor));
+    pg.stroke(c);
+    pg.fill(c);
+
+    pg.vertex(t.p1.x, t.p1.y);
+    pg.vertex(t.p2.x, t.p2.y);
+    pg.vertex(t.p3.x, t.p3.y);
+    pg.endShape(CLOSE);
+  }
+  pg.endDraw();
+}
+
+////////////////////////////////////////////////////////////////////
+// Splash rect triangulation
+void newSquareTriangulation(int seed, int iWidth, int iHeight, int backColor) {
+  noiseSeed(seed);
+  randomSeed(seed);
+
+
+  ArrayList<PVector> vertices = new ArrayList<PVector>();
+  for (int i = 0; i < mNbVertices; i++) {
+    vertices.add(new PVector(random(iWidth), random(iHeight)));
+  }
+
+  vertices.add(new PVector(0, 0));
+  vertices.add(new PVector(iWidth, 0));
+  vertices.add(new PVector(iWidth/2, 0));
+  vertices.add(new PVector(iWidth/2, iHeight));
+  vertices.add(new PVector(iWidth, iHeight));
+  vertices.add(new PVector(iWidth, iHeight/2));
+  vertices.add(new PVector(0, iHeight));
+  vertices.add(new PVector(0, iHeight/2));
+  triangulator = new CTriangulator(vertices);
+
+  triangulator = new CTriangulator(vertices);
+
+  ArrayList<Triangle> triangles = triangulator.getTriangles();
+
+  splash.beginDraw();
+  splash.background(backColor);
+  for (Triangle t : triangles) {
+    noiseSeed(seed);
+    noise += 0.05;
+    splash.beginShape(TRIANGLES);
+
+    int row_index = floor((map(noise(noise, 50, 20), 0, 1, 0, colors.getRowCount())));
+    //row_index = int(random(colors.getRowCount()-1));
+    String newColor = "FF"+colors.getString(row_index, 2);
+    int c = color(unhex(newColor));
+    splash.stroke(c);
+    splash.fill(c);
+
+    splash.vertex(t.p1.x, t.p1.y);
+    splash.vertex(t.p2.x, t.p2.y);
+    splash.vertex(t.p3.x, t.p3.y);
+    splash.endShape(CLOSE);
+  }
+  splash.endDraw();
+}
 
 
 
