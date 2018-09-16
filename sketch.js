@@ -13,6 +13,9 @@ function setup() {
     delaunay = Delaunator.from(points);
     coordinates = returnDelaunayCoordinates(points)
 
+    console.log(deltaE(color(255,0,0), color(255,50,55)))
+    console.log(deltaE(color(255,0,0), color(0,0,255)))
+
 }
 
 function draw() {
