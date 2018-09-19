@@ -2,6 +2,20 @@
 // I started this project long ago when I started programming, I began with processing, the went to android, got back to processing and finally switched to js
 
 
+/*
+
+todo :
+
+- remove unwanted colors
+- layout of the reference tile and multplier operator / bonus / and score
+- make everythin reactive
+- add animation when breaking a tile ( triangulation of random points inside a tile and shattering)
+- add sounds
+- add local storage for highscores
+
+*/
+
+
 var seed
 
 
@@ -32,10 +46,11 @@ var reference; // a reference tile, you need to match this coulour in the grid
 var nb_lasting = 0; // keep track of how much tiles of the same colour we still have
 
 var pg
+var splash
 
-function preload(){
-     currentTable = loadTable("assets/allcolors.csv", "header");
-    pg = createGraphics(windowWidth, windowHeight)
+function preload() {
+    currentTable = loadTable("assets/allcolors.csv", "header");
+
 }
 
 
@@ -50,19 +65,15 @@ function setup() {
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
     imageMode(CENTER);
+    pixelDensity(1)
 
     menu = 0;
     lastSec = second();
 
 
-    // pg = newRectTriangulation(0,0,windowWidth,windowHeight)
-    /*
-    points = randomPointsOnDisk(100, width / 2, height / 2, 200)
-    delaunay = Delaunator.from(points);
-    coordinates = returnDelaunayCoordinates(points)
+    pg = newRoundTriangulation(250, 250, 500)
+    splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
 
-    console.log(deltaE(color(255, 0, 0), color(255, 50, 55)))
-    console.log(deltaE(color(255, 0, 0), color(0, 0, 255)))*/
 
 
     var alpha = 150
@@ -102,7 +113,8 @@ function draw() {
         background(0);
         push();
         translate(width / 2, height * 4 / 12);
-        //image(pg, 0, 0);
+        stroke(255)
+        image(pg, 0, 0);
         pop();
         score = 0;
         play.display();
@@ -111,7 +123,7 @@ function draw() {
     } else if (menu == 1) { // display color selection buttons
         push();
         translate(width / 2, height / 2);
-        image(pg, 0, 0);
+        image(splash, 0, 0);
         pop();
         blanc.display();
         blanc.update();
@@ -136,7 +148,7 @@ function draw() {
     } else if (menu == 2) { // display dimension selection buttons
         push();
         translate(width / 2, height / 2);
-        //image(splash, 0, 0);
+        image(splash, 0, 0);
         pop();
         trois.display();
         trois.update();
@@ -182,9 +194,9 @@ function draw() {
 
 function mousePressed() {
     seed = random(9999)
-  //  points = randomPointsOnPlane(100, 50, 50, 500, 400)
-   // delaunay = Delaunator.from(points);
-//    coordinates = returnDelaunayCoordinates(points)
+    //  points = randomPointsOnPlane(100, 50, 50, 500, 400)
+    // delaunay = Delaunator.from(points);
+    //    coordinates = returnDelaunayCoordinates(points)
 
 }
 

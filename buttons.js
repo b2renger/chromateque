@@ -57,7 +57,7 @@ class ButtonM1 extends ButtonM {
                 currentTable = this.maTable;
                 colors = currentTable;
                 background(0);
-                //newSquareTriangulation(floor(random(100)), width, height, color(0));
+                 splash = newRectTriangulation(0,0, width, height, color(0), floor(random(100)));
                 colorName = this.name;
                 menu = 2;
             } else {
@@ -86,7 +86,7 @@ class ButtonM2 extends ButtonM {
                 gtime = millis();
                 colors = loadTable("assets/allcolors.csv", "header");
                 background(0);
-                //newSquareTriangulation(floor(random(100)), width, height, color(0));
+                splash = newRectTriangulation(0,0, width, height, color(0), floor(random(100)));
                 game = new Grid_game(currentTable, this.value);
                 dimensions = this.name;
                 menu = 3;
@@ -116,7 +116,7 @@ class ButtonM3 extends ButtonM {
                 gtime = millis();
                 menu = 0;
                 colors = loadTable("assets/allcolors.csv", "header");
-                // newRoundTriangulation(floor(random(100)), 650, color(0));
+                pg = new newRoundTriangulation(floor(random(100)), 650, color(0));
             }
         }
     }
