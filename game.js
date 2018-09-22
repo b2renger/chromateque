@@ -1,6 +1,5 @@
 class Grid_game {
 
-
     constructor(table, num) {
         this.tiles = [];
         this.c;
@@ -70,9 +69,8 @@ class Grid_game {
             }
         }
         if (nb_dead >= this.tiles.length) {
-            menu = 4;
-            colors = currentTable;
-            //newRoundTriangulation(floor(random(100)), 650, color(255));
+            pg = newRoundTriangulation(250, 250, 500)
+            menu =4
         }
         return nb_dead
     }

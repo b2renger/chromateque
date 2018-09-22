@@ -13,9 +13,7 @@ class ButtonM {
 
     display() {
         push();
-        // noStroke();
         rectMode(CENTER);
-        //textMode(CENTER);
         stroke(this.col)
         fill(this.col.toString());
         rect(this.xpos, this.ypos, this.hsize, this.vsize, 10);
@@ -33,11 +31,19 @@ class ButtonM {
         }
         return b;
     }
+
+    resize(x, y, h, v) {
+        this.xpos = x
+        this.ypos = y
+
+        this.hsize = h;
+        this.vsize = v;
+    }
+
 }
 
 // a button that selects the color
 class ButtonM1 extends ButtonM {
-
 
     constructor(xpos, ypos, hsize, vsize, col, name, maTable) {
         super(xpos, ypos, hsize, vsize, col, name);
@@ -55,9 +61,8 @@ class ButtonM1 extends ButtonM {
                 gtime = millis();
                 this.active = true;
                 currentTable = this.maTable;
-                colors = currentTable;
                 background(0);
-                 splash = newRectTriangulation(0,0, width, height, color(0), floor(random(100)));
+                splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
                 colorName = this.name;
                 menu = 2;
             } else {
@@ -69,7 +74,6 @@ class ButtonM1 extends ButtonM {
 
 // a button that selects a grid dimension
 class ButtonM2 extends ButtonM {
-
 
     constructor(xpos, ypos, hsize, vsize, col, name, value) {
         super(xpos, ypos, hsize, vsize, col, name);
@@ -84,9 +88,8 @@ class ButtonM2 extends ButtonM {
             rect(this.xpos, this.ypos, this.hsize + 10, this.vsize + 10, 15);
             if (mouseIsPressed && millis() > gtime + 200) {
                 gtime = millis();
-                colors = loadTable("assets/allcolors.csv", "header");
                 background(0);
-                splash = newRectTriangulation(0,0, width, height, color(0), floor(random(100)));
+                splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
                 game = new Grid_game(currentTable, this.value);
                 dimensions = this.name;
                 menu = 3;
@@ -115,8 +118,6 @@ class ButtonM3 extends ButtonM {
             if (mouseIsPressed && millis() > gtime + 200) {
                 gtime = millis();
                 menu = 0;
-                colors = loadTable("assets/allcolors.csv", "header");
-                pg = new newRoundTriangulation(floor(random(100)), 650, color(0));
             }
         }
     }
@@ -176,7 +177,6 @@ class ButtonM5 extends ButtonM {
 //a tile Class that is actually a buttonM
 class Tile extends ButtonM {
 
-
     constructor(xpos, ypos, siz, col, name) {
         super(xpos, ypos, siz, siz, col, name);
         this.siz = siz;
@@ -184,14 +184,12 @@ class Tile extends ButtonM {
         this.last_click = false;
     }
 
-
     display() {
         if (!this.dead) {
             push();
             rectMode(CORNER);
             noStroke();
             fill(this.col.toString());
-
             rect(this.xpos, this.ypos, this.siz, this.siz, 10);
             pop();
         }
@@ -207,6 +205,12 @@ class Tile extends ButtonM {
         return b;
     }
 
+    resize(x, y, s) {
+        this.xpos = x
+        this.ypos = y
+        this.siz = s;
+    }
+
     update() {
         if (!this.dead) {
             if (this.over(mouseX, mouseY)) {
@@ -220,9 +224,7 @@ class Tile extends ButtonM {
                 /////////////////////////////////////////////////////////////////////////////////////////////// score updating
                 if (mouseIsPressed && millis() > gtime + 200) {
                     gtime = millis();
-                    //var m = match(name, reference.name); // compare name to reference name
                     var dE = deltaE(this.col, reference.col);
-                    //console.log(dE)
                     if (dE == 0) {
                         this.col = color(0);
                         this.dead = true;
@@ -232,10 +234,9 @@ class Tile extends ButtonM {
                         lastSec = second();
                     } else {
                         score -= (10 + dE + bonusTime * 2);
-                        // gNotificationManager.notify(1, gNotification);
                         bonusTime = 0;
                         bonusClock = false;
-                        /////////////////////// need for vibration
+
                     }
                 }
             }

@@ -54,13 +54,11 @@ function preload() {
 }
 
 
-
-
 function setup() {
     createCanvas(windowWidth, windowHeight)
     background(0)
     seed = random(99999)
-    //colorMode(HSB, 360, 100, 100, 100)
+
     textSize(56);
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
@@ -69,14 +67,10 @@ function setup() {
 
     menu = 0;
     lastSec = second();
-
-
     pg = newRoundTriangulation(250, 250, 500)
     splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
 
-
-
-    var alpha = 150
+    var alpha = 180
     // init color selection buttons
     blanc = new ButtonM1(width / 2, height * 2 / 12, 500, buttonSize, color(255, alpha), "white", loadTable("assets/White.csv", "header"));
     bleu = new ButtonM1(width / 2, height * 3 / 12, 500, buttonSize, color(0, 0, 255, alpha), "blue", loadTable("assets/Blue.csv", "header"));
@@ -103,11 +97,10 @@ function setup() {
 }
 
 function draw() {
-    // background(0)
-    randomSeed(seed)
 
+    randomSeed(seed)
     background(0);
-    anim += 0.015;
+    anim += 0.0065;
 
     if (menu == 0) { // show access to gplay menu (ie menu 5, or to the game)
         background(0);
@@ -145,6 +138,7 @@ function draw() {
         vert.update();
         violet.display();
         violet.update();
+
     } else if (menu == 2) { // display dimension selection buttons
         push();
         translate(width / 2, height / 2);
@@ -174,30 +168,26 @@ function draw() {
             }
         }
         game.display();
+
     } else if (menu == 4) {
         background(255);
         push();
         translate(width / 2, height * 3 / 12);
         rotate(anim);
-        //image(pg, 0, 0, 300, 300);
+        image(pg, 0, 0);
         pop();
         fill(0);
         text(" CONGRATULATIONS ! ", width / 2, height * 1 / 12);
         text(" You Scored : " + score + " points", width / 2, height * 5 / 12);
-        //text (score , width/2+25, height*3/10);
         goback.display();
         goback.update();
-        // submit and show score buttons
     }
 
 }
 
 function mousePressed() {
     seed = random(9999)
-    //  points = randomPointsOnPlane(100, 50, 50, 500, 400)
-    // delaunay = Delaunator.from(points);
-    //    coordinates = returnDelaunayCoordinates(points)
-
+    pg = newRoundTriangulation(250, 250, 500)
 }
 
 
