@@ -119,6 +119,7 @@ class ButtonM3 extends ButtonM {
                 gtime = millis();
                 menu = 0;
                 currentTable = allcolors
+                newHighscore = false
             }
         }
     }

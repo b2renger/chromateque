@@ -7,10 +7,10 @@
 todo :
 
 - remove unwanted colors
-
 - add animation when breaking a tile ( triangulation of random points inside a tile and shattering)
 - add sounds
-- add local storage for highscores
+- arrange the way highscores are displayed
+
 
 */
 
@@ -36,6 +36,7 @@ var allcolors
 var colorName; // holds the current colorName that is being played
 var dimensions; // holds the dimesion of the grid
 var colors;
+var newHighscore = false;
 
 
 var buttonSize = 80;
@@ -102,6 +103,8 @@ function setup() {
     // init go back to main menu button
     goback = new ButtonM3(width / 2, height * 11 / 12, wColor, hColor, color(255), "Go back", 8);
     play = new ButtonM4(width / 2, height * 11 / 12, wColor, hColor, color(255), "Play");
+     highscores = new ButtonM5(width / 2, height * 10 / 12, wColor, hColor, color(255), "Highscores");
+
 
 }
 
@@ -121,6 +124,8 @@ function draw() {
         score = 0;
         play.display();
         play.update();
+        highscores.display();
+        highscores.update();
 
     } else if (menu == 1) { // display color selection buttons
         push();
@@ -188,8 +193,22 @@ function draw() {
         noStroke()
         fill(0);
         score = int (score)
-        text(" CONGRATULATIONS ! ", width / 2, height * 1 / 24);
-        text(" You Scored : " +score + " points", width / 2, height * 3 / 24);
+        if(newHighscore){
+            text(" CONGRATULATIONS this a new personal best ! : " , width / 2, height * 3 / 24);
+        }
+        text(" You Scored : " +score + " points", width / 2, height * 1 / 24);
+
+        goback.display();
+        goback.update();
+    }
+    else if (menu == 5){
+
+        for (var i = 0 ; i < localStorage.length ; i++){
+            noStroke()
+            fill(255)
+            text(localStorage.key(i) + " : " + localStorage.getItem(localStorage.key(i)), width/2, 10 + i*20)
+
+        }
         goback.display();
         goback.update();
     }
@@ -238,11 +257,9 @@ function windowResized() {
     if (game != null) {
         var cellsize = int((width *0.5 - (game.num + 1) * game.gap) / game.num);
         var yoffset = (height / (game.num+2)) / 2
-        // console.log(cellsize)
         for (var i = 0; i < game.num * game.num; i++) {
             var xpos = game.gap + i % game.num * (cellsize+game.gap);
             var ypos = yoffset + game.gap  + int(i / game.num) * (cellsize+game.gap);
-            //console.log(xpos,ypos)
             game.tiles[i].resize(xpos, ypos, cellsize, cellsize)
 
         }
