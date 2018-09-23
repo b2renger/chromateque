@@ -8,7 +8,7 @@ class Grid_game {
         this.table = table;
         this.gap = 10; // select a random gap between each square
         // calculate the size of each square for the given number of squares and gap between them
-        var cellsize = int((width/2 - (this.num + 1) * this.gap) /  this.num);
+        var cellsize = int((width*0.5 - (this.num + 1) * this.gap) /  this.num);
         this.yoffset = (height / (this.num +2)) / 2
         for (var i = 0; i < this.num * this.num; i++) {
             var xpos = i % this.num;
@@ -25,7 +25,7 @@ class Grid_game {
         var newColor = "#" +  this.table.get(this.row_index, 2);
         var hi = (newColor);
         var name =  this.table.get(this.row_index, 0);
-        reference = new Tile(width*3/4, height * 1 / 4, 120, hi, name);
+        reference = new Tile(width*3/4, height * 1 / 4, cellsize, hi, name);
     }
 
     display() {
@@ -34,8 +34,9 @@ class Grid_game {
 
         reference.display();
         reference.xpos = width - this.gap - reference.siz *2 ;
-        reference.ypos = height/2 - reference.siz
+        reference.ypos = height/2 - reference.siz/2
         fill(255);
+
         textAlign(LEFT , CENTER)
         text("x" + nb_lasting, reference.xpos + reference.siz *5 /4, reference.ypos + reference.siz/2);
 

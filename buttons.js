@@ -118,6 +118,7 @@ class ButtonM3 extends ButtonM {
             if (mouseIsPressed && millis() > gtime + 200) {
                 gtime = millis();
                 menu = 0;
+                currentTable = allcolors
             }
         }
     }
@@ -221,7 +222,7 @@ class Tile extends ButtonM {
                 strokeWeight(2);
                 rect(this.xpos - 5, this.ypos - 5, this.siz + 9, this.siz + 9, 15);
                 pop();
-                /////////////////////////////////////////////////////////////////////////////////////////////// score updating
+                // score updating
                 if (mouseIsPressed && millis() > gtime + 200) {
                     gtime = millis();
                     var dE = deltaE(this.col, reference.col);
@@ -242,4 +243,4 @@ class Tile extends ButtonM {
             }
         }
     }
-} //endclass
+}
