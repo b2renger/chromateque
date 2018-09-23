@@ -72,7 +72,7 @@ function setup() {
     pg = newRoundTriangulation(250, 250, 500)
     splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
 
-    var alpha = 180
+    var alpha = 200
     // init color selection buttons
      var xpos = width / 2
     var wColor = width / 4
@@ -103,7 +103,18 @@ function setup() {
     // init go back to main menu button
     goback = new ButtonM3(width / 2, height * 11 / 12, wColor, hColor, color(255), "Go back", 8);
     play = new ButtonM4(width / 2, height * 11 / 12, wColor, hColor, color(255), "Play");
-     highscores = new ButtonM5(width / 2, height * 10 / 12, wColor, hColor, color(255), "Highscores");
+    highscores = new ButtonM5(width / 2, height * 10 / 12, wColor, hColor, color(255), "Highscores");
+    //
+    hblanc = new ButtonM6( wColor, hColor * 2, wColor, hColor, color(255, alpha), "white", loadTable("assets/White.csv", "header"));
+    hbleu = new ButtonM6( wColor, hColor * 4, wColor, hColor, color(0, 0, 255, alpha), "blue", loadTable("assets/Blue.csv", "header"));
+    hbrun = new ButtonM6( wColor, hColor * 6, wColor, hColor, color(149, 80, 5, alpha), "brown", loadTable("assets/Brown.csv", "header"));
+    hgris = new ButtonM6( wColor, hColor * 8, wColor, hColor, color(150, alpha), "gray", loadTable("assets/Gray.csv", "header"));
+    hjaune = new ButtonM6( wColor, hColor * 10, wColor, hColor, color(255, 255, 2, alpha), "yellow", loadTable("assets/Yellow.csv", "header"));
+    horange = new ButtonM6( wColor, hColor * 12, wColor, hColor, color(255, 136, 5, alpha), "orange", loadTable("assets/Orange.csv", "header"));
+    hrose = new ButtonM6( wColor, hColor * 14, wColor, hColor, color(255, 180, 180, alpha), "pink", loadTable("assets/Pink.csv", "header"));
+    hrouge = new ButtonM6( wColor, hColor * 16, wColor, hColor, color(255, 0, 0, alpha), "red", loadTable("assets/Red.csv", "header"));
+    hvert = new ButtonM6( wColor, hColor * 18, wColor, hColor, color(0, 255, 0, alpha), "green", loadTable("assets/Green.csv", "header"));
+    hviolet = new ButtonM6( wColor, hColor * 20, wColor, hColor, color(255, 0, 255, alpha), "purple", loadTable("assets/Purple.csv", "header"));
 
 
 }
@@ -113,6 +124,7 @@ function draw() {
     randomSeed(seed)
     background(0);
     anim += 0.0065;
+    textAlign(CENTER,CENTER)
 
     if (menu == 0) { // show access to gplay menu (ie menu 5, or to the game)
         background(0);
@@ -194,7 +206,7 @@ function draw() {
         fill(0);
         score = int (score)
         if(newHighscore){
-            text(" CONGRATULATIONS this a new personal best ! : " , width / 2, height * 3 / 24);
+            text(" CONGRATULATIONS this a new personal best ! " , width / 2, height * 3 / 24);
         }
         text(" You Scored : " +score + " points", width / 2, height * 1 / 24);
 
@@ -203,12 +215,34 @@ function draw() {
     }
     else if (menu == 5){
 
-        for (var i = 0 ; i < localStorage.length ; i++){
-            noStroke()
-            fill(255)
-            text(localStorage.key(i) + " : " + localStorage.getItem(localStorage.key(i)), width/2, 10 + i*20)
+        push();
+        translate(width / 2, height / 2);
+        rotate(anim)
+        image(pg, 0, 0, 200,200);
+        pop();
 
-        }
+        hblanc.display();
+        hblanc.update();
+        hbleu.display();
+        hbleu.update();
+        hbrun.display();
+        hbrun.update();
+        hgris.display();
+        hgris.update();
+        hjaune.display();
+        hjaune.update();
+        horange.display();
+        horange.update();
+        hrose.display();
+        hrose.update();
+        hrouge.display();
+        hrouge.update();
+        hvert.display();
+        hvert.update();
+        hviolet.display();
+        hviolet.update();
+
+
         goback.display();
         goback.update();
     }
@@ -242,6 +276,17 @@ function windowResized() {
     rouge.resize(xpos, hColor * 16, wColor, hColor);
     vert.resize(xpos, hColor * 18, wColor, hColor);
     violet.resize(xpos, hColor * 20, wColor, hColor);
+
+    hblanc.resize(wColor, hColor * 2, wColor, hColor);
+    hbleu.resize(wColor, hColor * 4, wColor, hColor);
+    hbrun.resize(wColor, hColor * 6, wColor, hColor);
+    hgris.resize(wColor, hColor * 8, wColor, hColor);
+    hjaune.resize(wColor, hColor * 10, wColor, hColor);
+    horange.resize(wColor, hColor * 12, wColor, hColor);
+    hrose.resize(wColor, hColor * 14, wColor, hColor);
+    hrouge.resize(wColor, hColor * 16, wColor, hColor);
+    hvert.resize(wColor, hColor * 18, wColor, hColor);
+    hviolet.resize(wColor, hColor * 20, wColor, hColor);
     // init grid dimension buttons
     trois.resize(xpos, hGrid * 2, wGrid, hGrid);
     quatre.resize(xpos, hGrid * 4, wGrid, hGrid);
@@ -253,6 +298,7 @@ function windowResized() {
     // init go back to main menu button
     goback = new ButtonM3(width / 2, height * 11 / 12, wColor, hColor, color(255), "Go back", 8);
     play = new ButtonM4(width / 2, height * 11 / 12, wColor, hColor, color(255), "Play");
+    highscores = new ButtonM5(width / 2, height * 10 / 12, wColor, hColor, color(255), "Highscores");
 
     if (game != null) {
         var cellsize = int((width *0.5 - (game.num + 1) * game.gap) / game.num);

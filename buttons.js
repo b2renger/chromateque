@@ -150,7 +150,7 @@ class ButtonM4 extends ButtonM {
     }
 }
 
-//a button to start playing selects the color
+//a button to jump to highscores screen
 class ButtonM5 extends ButtonM {
 
     constructor(xpos, ypos, hsize, vsize, col, name) {
@@ -174,6 +174,53 @@ class ButtonM5 extends ButtonM {
             }
         }
     }
+}
+
+//a button to display highscores for each color
+class ButtonM6 extends ButtonM {
+
+    constructor(xpos, ypos, hsize, vsize, col, name) {
+        super(xpos, ypos, hsize, vsize, col, name);
+    }
+
+    update() {
+        if (this.over(mouseX, mouseY)) {
+            noFill();
+            stroke(180);
+            strokeWeight(2);
+            rect(this.xpos, this.ypos, this.hsize + 10, this.vsize + 10, 15);
+            displayHighscore(this.col, this.name, width*2 /3, 0)
+
+
+
+        }
+    }
+}
+
+function displayHighscore(col, name, x, y) {
+    push()
+    textSize(20)
+    textAlign(LEFT, CENTER)
+    rectMode(CENTER)
+    noStroke()
+
+    fill(red(col), green(col), blue(col), alpha(col)-25);
+
+
+    var hGrid = height / (14 + 4)
+    var wGrid = width / 6;
+    //rect(x + width/20,y+ hGrid + 7*hGrid , width/3, 7 *hGrid*2 )
+    textSize(hGrid)
+    //fill(0)
+    for (var i = 0; i < 7; i++) {
+        var s = name + "-" + (i + 3) + "x" + (i + 3)
+        text( (i + 3) + "x" + (i + 3) + " : " + localStorage.getItem(s), x, y +    hGrid*2 + i * hGrid*2)
+
+    }
+
+
+    pop()
+
 }
 
 //a tile Class that is actually a buttonM
