@@ -59,7 +59,7 @@ function setup() {
     background(0)
     seed = random(99999)
 
-    textSize(56);
+
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
     imageMode(CENTER);
@@ -72,27 +72,35 @@ function setup() {
 
     var alpha = 180
     // init color selection buttons
-    blanc = new ButtonM1(width / 2, height * 2 / 12, 500, buttonSize, color(255, alpha), "white", loadTable("assets/White.csv", "header"));
-    bleu = new ButtonM1(width / 2, height * 3 / 12, 500, buttonSize, color(0, 0, 255, alpha), "blue", loadTable("assets/Blue.csv", "header"));
-    brun = new ButtonM1(width / 2, height * 4 / 12, 500, buttonSize, color(149, 80, 5, alpha), "brown", loadTable("assets/Brown.csv", "header"));
-    gris = new ButtonM1(width / 2, height * 5 / 12, 500, buttonSize, color(150, alpha), "gray", loadTable("assets/Gray.csv", "header"));
-    jaune = new ButtonM1(width / 2, height * 6 / 12, 500, buttonSize, color(255, 255, 2, alpha), "yellow", loadTable("assets/Yellow.csv", "header"));
-    orange = new ButtonM1(width / 2, height * 7 / 12, 500, buttonSize, color(255, 136, 5, alpha), "orange", loadTable("assets/Orange.csv", "header"));
-    rose = new ButtonM1(width / 2, height * 8 / 12, 500, buttonSize, color(255, 180, 180, alpha), "pink", loadTable("assets/Pink.csv", "header"));
-    rouge = new ButtonM1(width / 2, height * 9 / 12, 500, buttonSize, color(255, 0, 0, alpha), "red", loadTable("assets/Red.csv", "header"));
-    vert = new ButtonM1(width / 2, height * 10 / 12, 500, buttonSize, color(0, 255, 0, alpha), "green", loadTable("assets/Green.csv", "header"));
-    violet = new ButtonM1(width / 2, height * 11 / 12, 500, buttonSize, color(255, 0, 255, alpha), "purple", loadTable("assets/Purple.csv", "header"));
+    var xpos = width / 2
+    var wColor = width / 4
+    var hColor = height / (10 + 2);
+    var hGrid = height / (7 + 2)
+    var wGrid = width / 6;
+
+    textSize(hColor/2)
+
+    blanc = new ButtonM1(xpos, hColor * 2, wColor, hColor, color(255, alpha), "white", loadTable("assets/White.csv", "header"));
+    bleu = new ButtonM1(xpos, hColor * 3, wColor, hColor, color(0, 0, 255, alpha), "blue", loadTable("assets/Blue.csv", "header"));
+    brun = new ButtonM1(xpos, hColor * 4, wColor, hColor, color(149, 80, 5, alpha), "brown", loadTable("assets/Brown.csv", "header"));
+    gris = new ButtonM1(xpos, hColor * 5, wColor, hColor, color(150, alpha), "gray", loadTable("assets/Gray.csv", "header"));
+    jaune = new ButtonM1(xpos, hColor * 6, wColor, hColor, color(255, 255, 2, alpha), "yellow", loadTable("assets/Yellow.csv", "header"));
+    orange = new ButtonM1(xpos, hColor * 7, wColor, hColor, color(255, 136, 5, alpha), "orange", loadTable("assets/Orange.csv", "header"));
+    rose = new ButtonM1(xpos, hColor * 8, wColor, hColor, color(255, 180, 180, alpha), "pink", loadTable("assets/Pink.csv", "header"));
+    rouge = new ButtonM1(xpos, hColor * 9, wColor, hColor, color(255, 0, 0, alpha), "red", loadTable("assets/Red.csv", "header"));
+    vert = new ButtonM1(xpos, hColor * 10, wColor, hColor, color(0, 255, 0, alpha), "green", loadTable("assets/Green.csv", "header"));
+    violet = new ButtonM1(xpos, hColor * 11, wColor, hColor, color(255, 0, 255, alpha), "purple", loadTable("assets/Purple.csv", "header"));
     // init grid dimension buttons
-    trois = new ButtonM2(width / 2, height * 2 / 10, 250, buttonSize, color(255, alpha), "3x3", 3);
-    quatre = new ButtonM2(width / 2, height * 3 / 10, 250, buttonSize, color(255, alpha), "4x4", 4);
-    cinq = new ButtonM2(width / 2, height * 4 / 10, 250, buttonSize, color(255, alpha), "5x5", 5);
-    six = new ButtonM2(width / 2, height * 5 / 10, 250, buttonSize, color(255, alpha), "6x6", 6);
-    sept = new ButtonM2(width / 2, height * 6 / 10, 250, buttonSize, color(255, alpha), "7x7", 7);
-    huit = new ButtonM2(width / 2, height * 7 / 10, 250, buttonSize, color(255, alpha), "8x8", 8);
-    neuf = new ButtonM2(width / 2, height * 8 / 10, 250, buttonSize, color(255, alpha), "9x9", 9);
+    trois = new ButtonM2(xpos, hGrid * 2, wGrid, hGrid, color(255, alpha), "3x3", 3);
+    quatre = new ButtonM2(xpos, hGrid * 3, wGrid, hGrid, color(255, alpha), "4x4", 4);
+    cinq = new ButtonM2(xpos, hGrid * 4, wGrid, hGrid, color(255, alpha), "5x5", 5);
+    six = new ButtonM2(xpos, hGrid * 5, wGrid, hGrid, color(255, alpha), "6x6", 6);
+    sept = new ButtonM2(xpos, hGrid * 6, wGrid, hGrid, color(255, alpha), "7x7", 7);
+    huit = new ButtonM2(xpos, hGrid * 7, wGrid, hGrid, color(255, alpha), "8x8", 8);
+    neuf = new ButtonM2(xpos, hGrid * 8, wGrid, hGrid, color(255, alpha), "9x9", 9);
     // init go back to main menu button
-    goback = new ButtonM3(width / 2, height * 11 / 12, 500, buttonSize, color(255), "Go back", 8);
-    play = new ButtonM4(width / 2, height * 9 / 12, 500, buttonSize, color(255), "Play");
+    goback = new ButtonM3(width / 2, height * 11 / 12, wColor, hColor, color(255), "Go back", 8);
+    play = new ButtonM4(width / 2, height * 9 / 12, wColor, hColor, color(255), "Play");
 
 }
 
@@ -105,7 +113,7 @@ function draw() {
     if (menu == 0) { // show access to gplay menu (ie menu 5, or to the game)
         background(0);
         push();
-        translate(width / 2, height * 4 / 12);
+        translate(width / 2, height /2);
         stroke(255)
         image(pg, 0, 0);
         pop();
@@ -116,7 +124,7 @@ function draw() {
     } else if (menu == 1) { // display color selection buttons
         push();
         translate(width / 2, height / 2);
-        image(splash, 0, 0);
+        image(splash, 0, 0, width, height);
         pop();
         blanc.display();
         blanc.update();
@@ -142,7 +150,7 @@ function draw() {
     } else if (menu == 2) { // display dimension selection buttons
         push();
         translate(width / 2, height / 2);
-        image(splash, 0, 0);
+        image(splash, 0, 0, width, height);
         pop();
         trois.display();
         trois.update();
@@ -172,13 +180,15 @@ function draw() {
     } else if (menu == 4) {
         background(255);
         push();
-        translate(width / 2, height * 3 / 12);
+        translate(width / 2, height /2);
         rotate(anim);
         image(pg, 0, 0);
         pop();
+        noStroke()
         fill(0);
-        text(" CONGRATULATIONS ! ", width / 2, height * 1 / 12);
-        text(" You Scored : " + score + " points", width / 2, height * 5 / 12);
+        score = int (score)
+        text(" CONGRATULATIONS ! ", width / 2, height * 1 / 24);
+        text(" You Scored : " +score + " points", width / 2, height * 3 / 24);
         goback.display();
         goback.update();
     }
@@ -188,10 +198,55 @@ function draw() {
 function mousePressed() {
     seed = random(9999)
     pg = newRoundTriangulation(250, 250, 500)
+    splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
+
 }
 
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight)
 
+    var xpos = width / 2
+    var wColor = width / 4
+    var hColor = height / (20 + 4);
+    var hGrid = height / (14 + 4)
+    var wGrid = width / 6;
+
+    blanc.resize(xpos, hColor * 2, wColor, hColor);
+    bleu.resize(xpos, hColor * 4, wColor, hColor);
+    brun.resize(xpos, hColor * 6, wColor, hColor);
+    gris.resize(xpos, hColor * 8, wColor, hColor);
+    jaune.resize(xpos, hColor * 10, wColor, hColor);
+    orange.resize(xpos, hColor * 12, wColor, hColor);
+    rose.resize(xpos, hColor * 14, wColor, hColor);
+    rouge.resize(xpos, hColor * 16, wColor, hColor);
+    vert.resize(xpos, hColor * 18, wColor, hColor);
+    violet.resize(xpos, hColor * 20, wColor, hColor);
+    // init grid dimension buttons
+    trois.resize(xpos, hGrid * 2, wGrid, hGrid);
+    quatre.resize(xpos, hGrid * 4, wGrid, hGrid);
+    cinq.resize(xpos, hGrid * 6, wGrid, hGrid);
+    six.resize(xpos, hGrid * 8, wGrid, hGrid);
+    sept.resize(xpos, hGrid * 10, wGrid, hGrid);
+    huit.resize(xpos, hGrid * 12, wGrid, hGrid);
+    neuf.resize(xpos, hGrid * 14, wGrid, hGrid);
+    // init go back to main menu button
+    goback = new ButtonM3(width / 2, height * 11 / 12, wColor, hColor, color(255), "Go back", 8);
+    play = new ButtonM4(width / 2, height * 11 / 12, wColor, hColor, color(255), "Play");
+
+    if (game != null) {
+        var cellsize = int((width *0.55 - (game.num + 1) * game.gap) / game.num);
+        var yoffset = (height / (game.num+2)) / 2
+        // console.log(cellsize)
+        for (var i = 0; i < game.num * game.num; i++) {
+            var xpos = game.gap + i % game.num * (cellsize+game.gap);
+            var ypos = yoffset + game.gap  + int(i / game.num) * (cellsize+game.gap);
+            //console.log(xpos,ypos)
+            game.tiles[i].resize(xpos, ypos, cellsize, cellsize)
+
+        }
+        reference.siz = cellsize
+    }
+
+    textSize(hColor);
 }
