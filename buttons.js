@@ -189,7 +189,7 @@ class ButtonM6 extends ButtonM {
             stroke(180);
             strokeWeight(2);
             rect(this.xpos, this.ypos, this.hsize + 10, this.vsize + 10, 15);
-            displayHighscore(this.col, this.name, width*2 /3, 0)
+            displayHighscore(this.col, this.name, width - 10, 0)
 
 
 
@@ -200,7 +200,7 @@ class ButtonM6 extends ButtonM {
 function displayHighscore(col, name, x, y) {
     push()
     textSize(20)
-    textAlign(LEFT, CENTER)
+    textAlign(RIGHT, CENTER)
     rectMode(CENTER)
     noStroke()
 
@@ -214,7 +214,12 @@ function displayHighscore(col, name, x, y) {
     //fill(0)
     for (var i = 0; i < 7; i++) {
         var s = name + "-" + (i + 3) + "x" + (i + 3)
+        if(localStorage.getItem(s)!=null){
         text( (i + 3) + "x" + (i + 3) + " : " + localStorage.getItem(s), x, y +    hGrid*2 + i * hGrid*2)
+        }
+        else{
+            text( (i + 3) + "x" + (i + 3) + " : " + 0, x, y +    hGrid*2 + i * hGrid*2)
+        }
 
     }
 
