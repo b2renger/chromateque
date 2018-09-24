@@ -8,24 +8,34 @@ class Grid_game {
         this.table = table;
         this.gap = 10; // select a random gap between each square
         // calculate the size of each square for the given number of squares and gap between them
-        this.cellsize = int((width * 0.5 - (this.num + 1) * this.gap) / this.num);
+        var maxWidth = int((width * 0.90 - (this.num + 1) * this.gap) / this.num);
+        var maxHeight = int((height * 0.90 - (this.num + 1) * this.gap) / this.num);
+        this.cellsize
+        if (maxHeight < maxWidth) {
+            this.cellsize = maxHeight
+        } else {
+            this.cellsize = maxWidth
+        }
+
         this.yoffset = (height / (this.num + 2)) / 2
         for (var i = 0; i < this.num * this.num; i++) {
-            var xpos = i % this.num;
-            var ypos = int(i / this.num);
+            var xpos = (width / 2 - (this.num) * (this.cellsize + this.gap) / 2) + this.gap + i % this.num * (this.cellsize + this.gap);
+            var ypos = this.yoffset*2 + this.gap + int(i / this.num) * (this.cellsize + this.gap);
             //this.yoffset = (height / (this.num +2)) / 2
             var random_index = floor(random(this.table.getRowCount()));
             var name = table.getString(random_index, 0);
             var newC = "#" + table.getString(random_index, 2);
 
             var col = (newC);
-            var t = new Tile(this.gap * (xpos + 1) + this.cellsize * xpos, this.yoffset + this.gap * (ypos + 1) + this.cellsize * ypos, this.cellsize, col, name)
+            //var t = new Tile(this.gap * (xpos + 1) + this.cellsize * xpos, this.yoffset + this.gap * (ypos + 1) + this.cellsize * ypos, this.cellsize, col, name)
+            var t = new Tile(xpos, ypos, this.cellsize, col, name)
             this.tiles.push(t);
         }
         var newColor = "#" + this.table.get(this.row_index, 2);
         var hi = (newColor);
         var name = this.table.get(this.row_index, 0);
-        reference = new Tile(width * 3 / 4, height * 1 / 4, this.cellsize, hi, name);
+
+        reference = new Tile(0,0 , this.cellsize/2, hi, name);
     }
 
     display() {
@@ -33,8 +43,8 @@ class Grid_game {
         background(0);
 
         reference.display();
-        reference.xpos = width - this.gap - reference.siz * 2;
-        reference.ypos = height / 2 - reference.siz / 2
+        reference.xpos = width/2 -reference.siz/2
+        reference.ypos =  this.gap/2
         fill(255);
 
         textAlign(LEFT, CENTER)
@@ -69,7 +79,7 @@ class Grid_game {
             while (t.dead && this.check_tiles() < this.tiles.length) {
                 t = this.tiles[int(random(this.tiles.length))]
             }
-            reference = new Tile(width - this.gap - reference.siz * 2,height / 2 - reference.siz / 2, this.cellsize, t.col, '');
+            reference = new Tile(0,0, this.cellsize/2, t.col, '');
         }
         nb_lasting = occurence;
     }

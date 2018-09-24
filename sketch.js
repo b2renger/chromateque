@@ -74,13 +74,13 @@ function setup() {
 
     var alpha = 200
     // init color selection buttons
-     var xpos = width / 2
+    var xpos = width / 2
     var wColor = width / 4
     var hColor = height / (20 + 4);
     var hGrid = height / (14 + 4)
     var wGrid = width / 6;
 
-    textSize(hColor/2)
+    textSize(hColor / 2)
 
     blanc = new ButtonM1(xpos, hColor * 2, wColor, hColor, color(255, alpha), "white", loadTable("assets/White.csv", "header"));
     bleu = new ButtonM1(xpos, hColor * 4, wColor, hColor, color(0, 0, 255, alpha), "blue", loadTable("assets/Blue.csv", "header"));
@@ -105,16 +105,16 @@ function setup() {
     play = new ButtonM4(width / 2, height * 11 / 12, wColor, hColor, color(255), "Play");
     highscores = new ButtonM5(width / 2, height * 10 / 12, wColor, hColor, color(255), "Highscores");
     //
-    hblanc = new ButtonM6( wColor/2, hColor * 2, wColor, hColor, color(255, alpha), "white", loadTable("assets/White.csv", "header"));
-    hbleu = new ButtonM6( wColor/2, hColor * 4, wColor, hColor, color(0, 0, 255, alpha), "blue", loadTable("assets/Blue.csv", "header"));
-    hbrun = new ButtonM6( wColor/2, hColor * 6, wColor, hColor, color(149, 80, 5, alpha), "brown", loadTable("assets/Brown.csv", "header"));
-    hgris = new ButtonM6( wColor/2, hColor * 8, wColor, hColor, color(150, alpha), "gray", loadTable("assets/Gray.csv", "header"));
-    hjaune = new ButtonM6( wColor/2, hColor * 10, wColor, hColor, color(255, 255, 2, alpha), "yellow", loadTable("assets/Yellow.csv", "header"));
-    horange = new ButtonM6( wColor/2, hColor * 12, wColor, hColor, color(255, 136, 5, alpha), "orange", loadTable("assets/Orange.csv", "header"));
-    hrose = new ButtonM6( wColor/2, hColor * 14, wColor, hColor, color(255, 180, 180, alpha), "pink", loadTable("assets/Pink.csv", "header"));
-    hrouge = new ButtonM6( wColor/2, hColor * 16, wColor, hColor, color(255, 0, 0, alpha), "red", loadTable("assets/Red.csv", "header"));
-    hvert = new ButtonM6( wColor/2, hColor * 18, wColor, hColor, color(0, 255, 0, alpha), "green", loadTable("assets/Green.csv", "header"));
-    hviolet = new ButtonM6( wColor/2, hColor * 20, wColor, hColor, color(255, 0, 255, alpha), "purple", loadTable("assets/Purple.csv", "header"));
+    hblanc = new ButtonM6(wColor / 2, hColor * 2, wColor, hColor, color(255, alpha), "white", loadTable("assets/White.csv", "header"));
+    hbleu = new ButtonM6(wColor / 2, hColor * 4, wColor, hColor, color(0, 0, 255, alpha), "blue", loadTable("assets/Blue.csv", "header"));
+    hbrun = new ButtonM6(wColor / 2, hColor * 6, wColor, hColor, color(149, 80, 5, alpha), "brown", loadTable("assets/Brown.csv", "header"));
+    hgris = new ButtonM6(wColor / 2, hColor * 8, wColor, hColor, color(150, alpha), "gray", loadTable("assets/Gray.csv", "header"));
+    hjaune = new ButtonM6(wColor / 2, hColor * 10, wColor, hColor, color(255, 255, 2, alpha), "yellow", loadTable("assets/Yellow.csv", "header"));
+    horange = new ButtonM6(wColor / 2, hColor * 12, wColor, hColor, color(255, 136, 5, alpha), "orange", loadTable("assets/Orange.csv", "header"));
+    hrose = new ButtonM6(wColor / 2, hColor * 14, wColor, hColor, color(255, 180, 180, alpha), "pink", loadTable("assets/Pink.csv", "header"));
+    hrouge = new ButtonM6(wColor / 2, hColor * 16, wColor, hColor, color(255, 0, 0, alpha), "red", loadTable("assets/Red.csv", "header"));
+    hvert = new ButtonM6(wColor / 2, hColor * 18, wColor, hColor, color(0, 255, 0, alpha), "green", loadTable("assets/Green.csv", "header"));
+    hviolet = new ButtonM6(wColor / 2, hColor * 20, wColor, hColor, color(255, 0, 255, alpha), "purple", loadTable("assets/Purple.csv", "header"));
 
 
 }
@@ -124,12 +124,12 @@ function draw() {
     randomSeed(seed)
     background(0);
     anim += 0.0065;
-    textAlign(CENTER,CENTER)
+    textAlign(CENTER, CENTER)
 
     if (menu == 0) { // show access to gplay menu (ie menu 5, or to the game)
         background(0);
         push();
-        translate(width / 2, height /2);
+        translate(width / 2, height / 2);
         stroke(255)
         image(pg, 0, 0);
         pop();
@@ -198,27 +198,26 @@ function draw() {
     } else if (menu == 4) {
         background(255);
         push();
-        translate(width / 2, height /2);
+        translate(width / 2, height / 2);
         rotate(anim);
         image(pg, 0, 0);
         pop();
         noStroke()
         fill(0);
-        score = int (score)
-        if(newHighscore){
-            text(" CONGRATULATIONS this a new personal best ! " , width / 2, height * 3 / 24);
+        score = int(score)
+        if (newHighscore) {
+            text(" CONGRATULATIONS this a new personal best ! ", width / 2, height * 3 / 24);
         }
-        text(" You Scored : " +score + " points", width / 2, height * 1 / 24);
+        text(" You Scored : " + score + " points", width / 2, height * 1 / 24);
 
         goback.display();
         goback.update();
-    }
-    else if (menu == 5){
+    } else if (menu == 5) {
 
         push();
         translate(width / 2, height / 2);
         rotate(anim)
-        image(pg, 0, 0, width/3, width/3);
+        image(pg, 0, 0, width / 3, width / 3);
         pop();
 
         hblanc.display();
@@ -277,16 +276,16 @@ function windowResized() {
     vert.resize(xpos, hColor * 18, wColor, hColor);
     violet.resize(xpos, hColor * 20, wColor, hColor);
 
-    hblanc.resize(wColor/2 +10, hColor * 2, wColor, hColor);
-    hbleu.resize(wColor/2 +10, hColor * 4, wColor, hColor);
-    hbrun.resize(wColor/2 +10, hColor * 6, wColor, hColor);
-    hgris.resize(wColor/2 +10, hColor * 8, wColor, hColor);
-    hjaune.resize(wColor/2 +10, hColor * 10, wColor, hColor);
-    horange.resize(wColor/2 +10, hColor * 12, wColor, hColor);
-    hrose.resize(wColor/2 +10, hColor * 14, wColor, hColor);
-    hrouge.resize(wColor/2 +10, hColor * 16, wColor, hColor);
-    hvert.resize(wColor/2 +10, hColor * 18, wColor, hColor);
-    hviolet.resize(wColor/2 +10, hColor * 20, wColor, hColor);
+    hblanc.resize(wColor / 2 + 10, hColor * 2, wColor, hColor);
+    hbleu.resize(wColor / 2 + 10, hColor * 4, wColor, hColor);
+    hbrun.resize(wColor / 2 + 10, hColor * 6, wColor, hColor);
+    hgris.resize(wColor / 2 + 10, hColor * 8, wColor, hColor);
+    hjaune.resize(wColor / 2 + 10, hColor * 10, wColor, hColor);
+    horange.resize(wColor / 2 + 10, hColor * 12, wColor, hColor);
+    hrose.resize(wColor / 2 + 10, hColor * 14, wColor, hColor);
+    hrouge.resize(wColor / 2 + 10, hColor * 16, wColor, hColor);
+    hvert.resize(wColor / 2 + 10, hColor * 18, wColor, hColor);
+    hviolet.resize(wColor / 2 + 10, hColor * 20, wColor, hColor);
     // init grid dimension buttons
     trois.resize(xpos, hGrid * 2, wGrid, hGrid);
     quatre.resize(xpos, hGrid * 4, wGrid, hGrid);
@@ -301,16 +300,24 @@ function windowResized() {
     highscores = new ButtonM5(width / 2, height * 10 / 12, wColor, hColor, color(255), "Highscores");
 
     if (game != null) {
-        var cellsize = int((width *0.5 - (game.num + 1) * game.gap) / game.num);
-        var yoffset = (height / (game.num+2)) / 2
+        var maxWidth = int((width * 0.90 - (game.num + 1) * game.gap) / game.num);
+        var maxHeight = int((height * 0.90 - (game.num + 1) * game.gap) / game.num);
+        var cellsize
+        if (maxHeight < maxWidth) {
+            cellsize = maxHeight
+        } else {
+            cellsize = maxWidth
+        }
+        //   var cellsize = int((width *0.5 - (game.num + 1) * game.gap) / game.num);
+        var yoffset = (height / (game.num + 2)) / 2
         for (var i = 0; i < game.num * game.num; i++) {
-            var xpos = game.gap + i % game.num * (cellsize+game.gap);
-            var ypos = yoffset + game.gap  + int(i / game.num) * (cellsize+game.gap);
+            var xpos = (width / 2 - (game.num) * (cellsize + game.gap) / 2) + game.gap + i % game.num * (cellsize + game.gap);
+            var ypos = yoffset*2 + game.gap + int(i / game.num) * (cellsize + game.gap);
             game.tiles[i].resize(xpos, ypos, cellsize, cellsize)
 
         }
-        reference.siz = cellsize
+        reference.siz = cellsize / 2
     }
 
-    textSize(hColor/2);
+    textSize(hColor / 2);
 }
