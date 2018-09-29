@@ -190,9 +190,6 @@ class ButtonM6 extends ButtonM {
             strokeWeight(2);
             rect(this.xpos, this.ypos, this.hsize + 10, this.vsize + 10, 15);
             displayHighscore(this.col, this.name, width - 10, 0)
-
-
-
         }
     }
 }
@@ -203,15 +200,11 @@ function displayHighscore(col, name, x, y) {
     textAlign(RIGHT, CENTER)
     rectMode(CENTER)
     noStroke()
-
     fill(red(col), green(col), blue(col), alpha(col)-25);
-
-
     var hGrid = height / (14 + 4)
     var wGrid = width / 6;
-    //rect(x + width/20,y+ hGrid + 7*hGrid , width/3, 7 *hGrid*2 )
+
     textSize(hGrid)
-    //fill(0)
     for (var i = 0; i < 7; i++) {
         var s = name + "-" + (i + 3) + "x" + (i + 3)
         if(localStorage.getItem(s)!=null){
@@ -220,12 +213,8 @@ function displayHighscore(col, name, x, y) {
         else{
             text( (i + 3) + "x" + (i + 3) + " : " + 0, x, y +    hGrid*2 + i * hGrid*2)
         }
-
     }
-
-
     pop()
-
 }
 
 //a tile Class that is actually a buttonM

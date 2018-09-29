@@ -9,7 +9,7 @@ class Grid_game {
         this.gap = 10; // select a random gap between each square
         // calculate the size of each square for the given number of squares and gap between them
         var maxWidth = int((width * 0.90 - (this.num + 1) * this.gap) / this.num);
-        var maxHeight = int((height * 0.90 - (this.num + 1) * this.gap) / this.num);
+        var maxHeight = int((height * 0.80 - (this.num + 1) * this.gap) / this.num);
         this.cellsize
         if (maxHeight < maxWidth) {
             this.cellsize = maxHeight
@@ -23,15 +23,13 @@ class Grid_game {
             var ypos = this.yoffset*2 + this.gap + int(i / this.num) * (this.cellsize + this.gap);
             //this.yoffset = (height / (this.num +2)) / 2
             var random_index = floor(random(this.table.getRowCount()));
-            var name = table.getString(random_index, 0);
-            var newC = "#" + table.getString(random_index, 2);
-
+            var name = this.table.getString(random_index, 0);
+            var newC =  this.table.getString(random_index, 2);
             var col = (newC);
-            //var t = new Tile(this.gap * (xpos + 1) + this.cellsize * xpos, this.yoffset + this.gap * (ypos + 1) + this.cellsize * ypos, this.cellsize, col, name)
             var t = new Tile(xpos, ypos, this.cellsize, col, name)
             this.tiles.push(t);
         }
-        var newColor = "#" + this.table.get(this.row_index, 2);
+        var newColor =  this.table.get(this.row_index, 2);
         var hi = (newColor);
         var name = this.table.get(this.row_index, 0);
 

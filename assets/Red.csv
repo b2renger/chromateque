@@ -1,37 +1,37 @@
 name,def,code
-alizarine,[rouge d'~] (inv) pigment. Rouge soutenu.,D90115
-amarante,(inv) Rouge bordeaux velouté.,91283B
-Andrinople,[rouge d'~  rouge ~] (inv) Rouge profond.,A91101
-anglais,[rouge ~] (inv) Rouge légèrement rosé. Employé en peinture à l'huile.,BD4A4F
-Bismarck,[rouge ~] (inv) Rouge-brun.,A5260A
-bordeaux,[~  rouge ~] (inv) Rouge foncé tirant sur le violet.,6D071A
-bourgogne,[~  rouge ~] (inv) Rouge foncé tirant sur le brun.,6B0D0D
-brique,(inv) Rouge moyen fade  jaunâtre.,842E1B
-capucine,[~  rouge ~] (inv) Rouge lumineux très légèrement orangé  une des couleurs des fleurs de capucine.,FF5E4D
-cardinal,[rouge ~] (inv) Rouge soutenu de la robe des cardinaux.,B82010
-carmin,[~  rouge ~] (inv) Rouge profond très légèrement violacé.,960018
-cerise,[~  rouge ~] (inv) Rouge vif à profond.,BB0B0B
-coquelicot,[~  rouge ~] (inv) Rouge soutenu à profond. Couleur de la fleur de même nom.,C60800
-corail,(inv) Rouge vif tirant sur l'orangé. Plus orangé que le rouge vermillon.,E73E01
-écarlate,Rouge vif.,ED0000
-écrevisse,[rouge ~] (inv) Rouge vif  légèrement orangé  de la couleur d'une écrevisse cuite.,BC2001
-feu,[rouge ~] (inv) Rouge vif à rouge orangé vif. Rappelle plus la couleur des braises que celle des flammes.,FF4901
-fraise,[~  rouge ~] (inv) Rouge moyen doux. Couleur du fruit de même nom.,BF3030
-fraise écrasée,(inv) Fraise profond.,A42424
-framboise,[~  rouge ~] (inv) Entre rouge moyen et pourpre doux. Couleur du fruit de même nom. Version rosée de la couleur rouge fraise.,C72C48
-garance,(inv) Rouge vif. Couleur des pantalons militaires français au début de la première guerre mondiale.,EE1010
-grenadine,[~  rouge ~] (inv) Rouge clair très légèrement rosé de la boisson de même nom. Implique souvent une idée de transparence.,E9383F
-grenat,[~  rouge ~] (inv) Rouge sombre très légèrement rosé.,6E0B14
-groseille,[~  rouge ~] (inv) Rouge vif  pouvant se teinter très légèrement de rose.,CF0A1D
-incarnat,Rouge-rose clair et vif  proche de la couleur de la chair.,FF6F7D
-nacarat,(inv) Rouge clair  entre cerise et rose  à reflets nacrés.,FC5D5D
-pourpre,Rouge violacé profond.,9E0E40
-pourpre,héraldique. Pourpre à gris-violacé.,965578
-rouge,Couleur du coquelicot  du sang. Couvre des couleurs variées  depuis le rouge bordeaux jusqu'au rouge corail.,E21313
-sang,[rouge ~] (inv) Rouge sombre brillant. Couleur du sang.,850606
-sang de boeuf,(inv) Rouge sang tirant sur le marron.,730800
-senois,(inv) héraldique. (rare) Entre rouge et brun.,8D4024
-tomate,[~  rouge ~] (inv) Rouge vif légèrement orangé. Couleur de la tomate mûre.,DE2916
-tomette,[rouge ~] (inv) Rouge brique clair à vif.,AE4A34
-vermeil,Rouge vif  plus foncé que l'incarnat.,FF0921
-vermillon,[~  rouge ~] (inv) Rouge vif pouvant tirer franchement sur l'orangé. Couleur du cinabre.,DB1702
+alizarine,[rouge d'~] (inv) pigment. Rouge soutenu.,#D90115
+amarante,(inv) Rouge bordeaux velouté.,#91283B
+Andrinople,[rouge d'~  rouge ~] (inv) Rouge profond.,#A91101
+anglais,[rouge ~] (inv) Rouge légèrement rosé. Employé en peinture à l'huile.,#BD4A4F
+Bismarck,[rouge ~] (inv) Rouge-brun.,#A5260A
+bordeaux,[~  rouge ~] (inv) Rouge foncé tirant sur le violet.,#6D071A
+bourgogne,[~  rouge ~] (inv) Rouge foncé tirant sur le brun.,#6B0D0D
+brique,(inv) Rouge moyen fade  jaunâtre.,#842E1B
+capucine,[~  rouge ~] (inv) Rouge lumineux très légèrement orangé  une des couleurs des fleurs de capucine.,#FF5E4D
+cardinal,[rouge ~] (inv) Rouge soutenu de la robe des cardinaux.,#B82010
+carmin,[~  rouge ~] (inv) Rouge profond très légèrement violacé.,#960018
+cerise,[~  rouge ~] (inv) Rouge vif à profond.,#BB0B0B
+coquelicot,[~  rouge ~] (inv) Rouge soutenu à profond. Couleur de la fleur de même nom.,#C60800
+corail,(inv) Rouge vif tirant sur l'orangé. Plus orangé que le rouge vermillon.,#E73E01
+écarlate,Rouge vif.,#ED0000
+écrevisse,[rouge ~] (inv) Rouge vif  légèrement orangé  de la couleur d'une écrevisse cuite.,#BC2001
+feu,[rouge ~] (inv) Rouge vif à rouge orangé vif. Rappelle plus la couleur des braises que celle des flammes.,#FF4901
+fraise,[~  rouge ~] (inv) Rouge moyen doux. Couleur du fruit de même nom.,#BF3030
+fraise écrasée,(inv) Fraise profond.,#A42424
+framboise,[~  rouge ~] (inv) Entre rouge moyen et pourpre doux. Couleur du fruit de même nom. Version rosée de la couleur rouge fraise.,#C72C48
+garance,(inv) Rouge vif. Couleur des pantalons militaires français au début de la première guerre mondiale.,#EE1010
+grenadine,[~  rouge ~] (inv) Rouge clair très légèrement rosé de la boisson de même nom. Implique souvent une idée de transparence.,#E9383F
+grenat,[~  rouge ~] (inv) Rouge sombre très légèrement rosé.,#6E0B14
+groseille,[~  rouge ~] (inv) Rouge vif  pouvant se teinter très légèrement de rose.,#CF0A1D
+incarnat,Rouge-rose clair et vif  proche de la couleur de la chair.,#FF6F7D
+nacarat,(inv) Rouge clair  entre cerise et rose  à reflets nacrés.,#FC5D5D
+pourpre,Rouge violacé profond.,#9E0E40
+pourpre,héraldique. Pourpre à gris-violacé.,#965578
+rouge,Couleur du coquelicot  du sang. Couvre des couleurs variées  depuis le rouge bordeaux jusqu'au rouge corail.,#E21313
+sang,[rouge ~] (inv) Rouge sombre brillant. Couleur du sang.,#850606
+sang de boeuf,(inv) Rouge sang tirant sur le marron.,#730800
+senois,(inv) héraldique. (rare) Entre rouge et brun.,#8D4024
+tomate,[~  rouge ~] (inv) Rouge vif légèrement orangé. Couleur de la tomate mûre.,#DE2916
+tomette,[rouge ~] (inv) Rouge brique clair à vif.,#AE4A34
+vermeil,Rouge vif  plus foncé que l'incarnat.,#FF0921
+vermillon,[~  rouge ~] (inv) Rouge vif pouvant tirer franchement sur l'orangé. Couleur du cinabre.,#DB1702

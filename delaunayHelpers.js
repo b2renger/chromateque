@@ -56,12 +56,10 @@ function randomPointsOnPlane(x, y, w, h, nb) {
 }
 
 function drawDelaunay(coordinates, pg) {
-
     for (var i = 0; i < coordinates.length; i += 1) {
         noStroke()
-
         var random_index = floor(random(currentTable.getRowCount()));
-        var newC = "#" + currentTable.get(random_index, 2);
+        var newC = currentTable.get(random_index, 2);
         pg.fill(newC)
         pg.noStroke()
         // fill(random(360), 100, 100)
@@ -75,7 +73,6 @@ function drawDelaunay(coordinates, pg) {
 
 function returnDelaunayCoordinates(points, delaunay) {
     var coords = []
-    //console.log(points)
     for (let i = 0; i < delaunay.triangles.length; i += 3) {
         coords.push([
         points[delaunay.triangles[i]],

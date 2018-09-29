@@ -1,15 +1,13 @@
-// for those reading this : sorry for the ugliness of this code
-// I started this project long ago when I started programming, I began with processing, the went to android, got back to processing and finally switched to js
-
+//http://pourpre.com/fr/
+//Josef Alber - Interaction of colors
 
 /*
 
 todo :
-- passer sur un layou portrai ou gérer la rotation
-- afficher 0 plutôt que null dans les highscores
-- remove unwanted colors
-- add animation when breaking a tile ( triangulation of random points inside a tile and shattering)
+
 - add sounds
+- add a mention when a perfect has been done ?
+- add animation when breaking a tile ( triangulation of random points inside a tile and shattering)?
 - faire un titre type + triangulation ?
 
 */
@@ -301,7 +299,7 @@ function windowResized() {
 
     if (game != null) {
         var maxWidth = int((width * 0.90 - (game.num + 1) * game.gap) / game.num);
-        var maxHeight = int((height * 0.90 - (game.num + 1) * game.gap) / game.num);
+        var maxHeight = int((height * 0.80 - (game.num + 1) * game.gap) / game.num);
         var cellsize
         if (maxHeight < maxWidth) {
             cellsize = maxHeight

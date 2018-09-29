@@ -1,33 +1,33 @@
 name,def,code
-acajou,(inv) Brun-roux soutenu couleur du bois d'acajou.,88421D
-alezan,chevaux. Robe unie jaune rougeâtre. Constitue avec blanc café au lait et noir les quatre types de robes simples.,A76726
-auburn,cheveux. Châtain-roux à reflets cuivrés.,9D3E0C
-beige,Brun-jaune très clair légèrement grisâtre. Couleur de la laine naturelle.,C8AD7F
-beigeasse,(péjoratif) D'un beige sale.,AFA77B
-bistre,Brun-gris jaunâtre.,856D4D
-bitume,(inv) Brun brillant. Mélange naturel d'hydrocarbures de composition et de teinte variable allant du brun au noir.,4E3D28
-bronze,(inv) Brun-doré.,614E1A
-brou de noix,(inv) Brun foncé pouvant aller jusqu'au noir. De la couleur que donne le brou de noix au bois.,3F2204
-brun,Entre roux et noir. Couleur du cuir naturel de la noisette. Couvre les teintes moyennes à foncées de l'orange.,5B3C11
-bureau,(inv) (vieilli) Brun de la couleur de l'étoffe grossière de même nom.,6B5731
-cacao,Marron sombre chaud. Plus doux que chocolat.,614B3A
-cachou,(inv) Brun profond très sombre presque noir.,2F1B0C
-café au lait,(inv) Café clair couleur de la boisson du même nom.,785E2F
-cannelle,Brun doux tirant légèrement sur le rouge couleur de la cannelle.,7E5835
-caramel,(inv) Marron moyen chaud.,7E3300
-châtaigne,(inv) Brun clair grisâtre. Couleur du fruit du même nom.,806D5A
-châtain,Brun moyen. Couleur de la châtaigne.,8B6C42
-chaudron,(inv) Brun cuivré. Peut impliquer mais pas systématiquement une idée de brillance comme le cuivre.,85530F
-chocolat,(inv) Brun-marron foncé moyennement saturé.,5A3A22
-feuille morte,(inv) Brun-roux un peu terne noisette rougeâtre couleur des feuilles mortes.,99512B
-kaki,(inv) Brun jaunâtre.,94812B
-lavallière,(inv) reliure. Brun clair tirant sur le feuille morte.,8F5922
-marron,(inv) Brun tirant sur le rouge.,582900
-mordoré,Brun chaud à reflets dorés.,87591A
-noisette,(inv) De la couleur du fruit de même nom. Brun-orange doux.,955628
-ombre,[terre d'~] (inv) Ocre-brun à brun.,625B48
-puce,(inv) Brun-rouge foncé.,4E1609
-rouille,(inv) Brun-roux.,985717
-sépia,(inv) Brun clair un peu fade.,A98C78
-Sienne,"[terre de ~] (inv) Ocre-brun clair. Quand elle est dite ""brûlée"" elle tire sur le rouge.",967C5C
-tabac,(inv) Brun-roux couleur du tabac blond.,9F551E
+acajou,(inv) Brun-roux soutenu couleur du bois d'acajou.,#88421D
+alezan,chevaux. Robe unie jaune rougeâtre. Constitue avec blanc café au lait et noir les quatre types de robes simples.,#A76726
+auburn,cheveux. Châtain-roux à reflets cuivrés.,#9D3E0C
+beige,Brun-jaune très clair légèrement grisâtre. Couleur de la laine naturelle.,#C8AD7F
+beigeasse,(péjoratif) D'un beige sale.,#AFA77B
+bistre,Brun-gris jaunâtre.,#856D4D
+bitume,(inv) Brun brillant. Mélange naturel d'hydrocarbures de composition et de teinte variable allant du brun au noir.,#4E3D28
+bronze,(inv) Brun-doré.,#614E1A
+brou de noix,(inv) Brun foncé pouvant aller jusqu'au noir. De la couleur que donne le brou de noix au bois.,#3F2204
+brun,Entre roux et noir. Couleur du cuir naturel de la noisette. Couvre les teintes moyennes à foncées de l'orange.,#5B3C11
+bureau,(inv) (vieilli) Brun de la couleur de l'étoffe grossière de même nom.,#6B5731
+cacao,Marron sombre chaud. Plus doux que chocolat.,#614B3A
+cachou,(inv) Brun profond très sombre presque noir.,#2F1B0C
+café au lait,(inv) Café clair couleur de la boisson du même nom.,#785E2F
+cannelle,Brun doux tirant légèrement sur le rouge couleur de la cannelle.,#7E5835
+caramel,(inv) Marron moyen chaud.,#7E3300
+châtaigne,(inv) Brun clair grisâtre. Couleur du fruit du même nom.,#806D5A
+châtain,Brun moyen. Couleur de la châtaigne.,#8B6C42
+chaudron,(inv) Brun cuivré. Peut impliquer mais pas systématiquement une idée de brillance comme le cuivre.,#85530F
+chocolat,(inv) Brun-marron foncé moyennement saturé.,#5A3A22
+feuille morte,(inv) Brun-roux un peu terne noisette rougeâtre couleur des feuilles mortes.,#99512B
+kaki,(inv) Brun jaunâtre.,#94812B
+lavallière,(inv) reliure. Brun clair tirant sur le feuille morte.,#8F5922
+marron,(inv) Brun tirant sur le rouge.,#582900
+mordoré,Brun chaud à reflets dorés.,#87591A
+noisette,(inv) De la couleur du fruit de même nom. Brun-orange doux.,#955628
+ombre,[terre d'~] (inv) Ocre-brun à brun.,#625B48
+puce,(inv) Brun-rouge foncé.,#4E1609
+rouille,(inv) Brun-roux.,#985717
+sépia,(inv) Brun clair un peu fade.,#A98C78
+Sienne,"[terre de ~] (inv) Ocre-brun clair. Quand elle est dite ""brûlée"" elle tire sur le rouge.",#967C5C
+tabac,(inv) Brun-roux couleur du tabac blond.,#9F551E
