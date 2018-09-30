@@ -260,6 +260,7 @@ class Tile extends ButtonM {
     }
 
     update() {
+
         if (!this.dead) {
             if (this.over(mouseX, mouseY)) {
                 push();
@@ -270,6 +271,7 @@ class Tile extends ButtonM {
                 rect(this.xpos - 5, this.ypos - 5, this.siz + 9, this.siz + 9, 15);
                 pop();
                 // score updating
+
                 if (mouseIsPressed && millis() > gtime + 200) {
                     gtime = millis();
                     var dE = deltaE(this.col, reference.col);
@@ -286,6 +288,10 @@ class Tile extends ButtonM {
                         bonusTime = 0;
                         bonusClock = false;
                         error.play()
+                        errorMade = true
+
+                        setTimeout (() => errorMade = false , 500)
+
                     }
                 }
             }

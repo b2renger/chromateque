@@ -5,7 +5,6 @@
 
 todo :
 - add mentions to inspirations
-- add sounds
 - add a mention when a perfect game has been done : in the score pannel and in the highscore menu
 - add a visual effect when an error has been done
 - add animation when breaking a tile ( triangulation of random points inside a tile and shattering)?
@@ -52,6 +51,7 @@ var correct
 var confirm
 var error
 
+var errorMade = false;
 function preload() {
     currentTable = loadTable("assets/allcolors.csv", "header");
     allcolors = currentTable

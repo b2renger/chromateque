@@ -40,6 +40,12 @@ class Grid_game {
         push()
         background(0);
 
+        if (errorMade){
+            reference.siz +=25
+        }
+        else{
+
+        }
         reference.display();
         reference.xpos = width/2 -reference.siz/2
         reference.ypos =  this.gap/2
@@ -61,6 +67,8 @@ class Grid_game {
         this.check_grid();
         this.check_tiles();
         pop()
+
+        reference.siz = this.cellsize/2
     }
 
     check_grid() {
