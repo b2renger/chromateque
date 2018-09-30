@@ -65,6 +65,7 @@ class ButtonM1 extends ButtonM {
                 splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
                 colorName = this.name;
                 menu = 2;
+                confirm.play()
             } else {
                 this.active = false;
             }
@@ -92,6 +93,7 @@ class ButtonM2 extends ButtonM {
                 splash = newRectTriangulation(0, 0, width, height, color(0), floor(random(100)));
                 game = new Grid_game(currentTable, this.value);
                 dimensions = this.name;
+                confirm.play()
                 menu = 3;
                 score = 0;
             }
@@ -118,6 +120,7 @@ class ButtonM3 extends ButtonM {
             if (mouseIsPressed && millis() > gtime + 200) {
                 gtime = millis();
                 menu = 0;
+                confirm.play()
                 currentTable = allcolors
                 newHighscore = false
             }
@@ -142,6 +145,7 @@ class ButtonM4 extends ButtonM {
                 gtime = millis();
                 this.active = true;
                 colorName = this.name;
+                confirm.play()
                 menu = 1;
             } else {
                 this.active = false;
@@ -168,6 +172,7 @@ class ButtonM5 extends ButtonM {
                 background(255);
                 this.active = true;
                 colorName = this.name;
+                confirm.play()
                 menu = 5;
             } else {
                 this.active = false;
@@ -275,11 +280,12 @@ class Tile extends ButtonM {
                         bonusTime = 10;
                         bonusClock = true;
                         lastSec = second();
+                        correct.play()
                     } else {
                         score -= (10 + dE + bonusTime * 2);
                         bonusTime = 0;
                         bonusClock = false;
-
+                        error.play()
                     }
                 }
             }

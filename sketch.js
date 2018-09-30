@@ -4,9 +4,10 @@
 /*
 
 todo :
-
+- add mentions to inspirations
 - add sounds
-- add a mention when a perfect has been done ?
+- add a mention when a perfect game has been done : in the score pannel and in the highscore menu
+- add a visual effect when an error has been done
 - add animation when breaking a tile ( triangulation of random points inside a tile and shattering)?
 - faire un titre type + triangulation ?
 
@@ -47,10 +48,20 @@ var nb_lasting = 0; // keep track of how much tiles of the same colour we still 
 var pg
 var splash
 
+var correct
+var confirm
+var error
+
 function preload() {
     currentTable = loadTable("assets/allcolors.csv", "header");
     allcolors = currentTable
 
+    correct = loadSound('assets/131660__bertrof__game-sound-correct.wav')
+    correct.setVolume(0.1)
+    confirm = loadSound('assets/403007__inspectorj__ui-confirmation-alert-a2.wav')
+    confirm.setVolume(0.1)
+    error = loadSound('assets/419023__jacco18__acess-denied-buzz.mp3')
+    error.setVolume(0.75)
 }
 
 
@@ -136,6 +147,8 @@ function draw() {
         play.update();
         highscores.display();
         highscores.update();
+
+
 
     } else if (menu == 1) { // display color selection buttons
         push();
@@ -310,7 +323,7 @@ function windowResized() {
         var yoffset = (height / (game.num + 2)) / 2
         for (var i = 0; i < game.num * game.num; i++) {
             var xpos = (width / 2 - (game.num) * (cellsize + game.gap) / 2) + game.gap + i % game.num * (cellsize + game.gap);
-            var ypos = yoffset*2 + game.gap + int(i / game.num) * (cellsize + game.gap);
+            var ypos = yoffset * 2 + game.gap + int(i / game.num) * (cellsize + game.gap);
             game.tiles[i].resize(xpos, ypos, cellsize, cellsize)
 
         }
