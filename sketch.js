@@ -5,7 +5,7 @@
 
 todo :
 - add mentions to inspirations
-
+- small fireworks when perfect is made
 */
 
 
@@ -143,6 +143,18 @@ function draw() {
         play.update();
         highscores.display();
         highscores.update();
+
+        fill(255)
+        ellipse( 50, 50 , 25,25)
+        fill(0)
+        textAlign(CENTER, CENTER)
+        text("?", 50, 50 )
+
+        if (dist(mouseX,mouseY,50,50)< 25){
+            fill(255)
+           text("This game is inspired by Josef Albers' book : Interaction of Colors", width/2, 50)
+            text("and the amazing website pourpre.com made by Yan Bilik", width/2, 70)
+        }
 
 
 
