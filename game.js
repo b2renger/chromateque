@@ -20,35 +20,35 @@ class Grid_game {
         this.yoffset = (height / (this.num + 2)) / 2
         for (var i = 0; i < this.num * this.num; i++) {
             var xpos = (width / 2 - (this.num) * (this.cellsize + this.gap) / 2) + this.gap + i % this.num * (this.cellsize + this.gap);
-            var ypos = this.yoffset*2 + this.gap + int(i / this.num) * (this.cellsize + this.gap);
+            var ypos = this.yoffset * 2 + this.gap + int(i / this.num) * (this.cellsize + this.gap);
             //this.yoffset = (height / (this.num +2)) / 2
             var random_index = floor(random(this.table.getRowCount()));
             var name = this.table.getString(random_index, 0);
-            var newC =  this.table.getString(random_index, 2);
+            var newC = this.table.getString(random_index, 2);
             var col = (newC);
             var t = new Tile(xpos, ypos, this.cellsize, col, name)
             this.tiles.push(t);
         }
-        var newColor =  this.table.get(this.row_index, 2);
+        var newColor = this.table.get(this.row_index, 2);
         var hi = (newColor);
         var name = this.table.get(this.row_index, 0);
 
-        reference = new Tile(0,0 , this.cellsize/2, hi, name);
+        reference = new Tile(0, 0, this.cellsize / 2, hi, name);
+        this.nerros =0;
     }
 
     display() {
         push()
         background(0);
 
-        if (errorMade){
-            reference.siz +=25
-        }
-        else{
+        if (errorMade) {
+            reference.siz += 25
+        } else {
 
         }
         reference.display();
-        reference.xpos = width/2 -reference.siz/2
-        reference.ypos =  this.gap/2
+        reference.xpos = width / 2 - reference.siz / 2
+        reference.ypos = this.gap / 2
         fill(255);
 
         textAlign(LEFT, CENTER)
@@ -68,7 +68,7 @@ class Grid_game {
         this.check_tiles();
         pop()
 
-        reference.siz = this.cellsize/2
+        reference.siz = this.cellsize / 2
     }
 
     check_grid() {
@@ -85,7 +85,7 @@ class Grid_game {
             while (t.dead && this.check_tiles() < this.tiles.length) {
                 t = this.tiles[int(random(this.tiles.length))]
             }
-            reference = new Tile(0,0, this.cellsize/2, t.col, '');
+            reference = new Tile(0, 0, this.cellsize / 2, t.col, '');
         }
         nb_lasting = occurence;
     }

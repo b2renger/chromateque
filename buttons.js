@@ -289,7 +289,7 @@ class Tile extends ButtonM {
                         bonusClock = false;
                         error.play()
                         errorMade = true
-
+                        game.nerros += 1;
                         setTimeout (() => errorMade = false , 500)
 
                     }

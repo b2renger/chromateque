@@ -5,10 +5,6 @@
 
 todo :
 - add mentions to inspirations
-- add a mention when a perfect game has been done : in the score pannel and in the highscore menu
-- add a visual effect when an error has been done
-- add animation when breaking a tile ( triangulation of random points inside a tile and shattering)?
-- faire un titre type + triangulation ?
 
 */
 
@@ -218,6 +214,9 @@ function draw() {
         score = int(score)
         if (newHighscore) {
             text(" CONGRATULATIONS this a new personal best ! ", width / 2, height * 3 / 24);
+        }
+        if(game.nerros == 0){
+            text(" Perfect! No mistakes were made !", width / 2, height * 4 / 24);
         }
         text(" You Scored : " + score + " points", width / 2, height * 1 / 24);
 
